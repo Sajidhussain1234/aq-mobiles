@@ -331,7 +331,7 @@ export default function Checkout() {
                                 >
                                     Pay and Order
                                 </Link>
-                            </div>b
+                            </div>
                             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                                 <p>
                                     or {" "}
