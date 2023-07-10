@@ -7,6 +7,13 @@ export async function fetchAllProducts() {
   return { data };
 }
 
+export async function fetchProductById(id) {
+  // TODO: we will not hard code server url
+  const { data } = await axios.get(`http://localhost:8080/products/${id}`);
+  // console.log(data)
+  return { data };
+}
+
 export async function fetchProductByFilter(filter, sort, pagination) {
   // filter = {category: ["smartphone","laptop"]}
   // sort = {_sort: "price"_order:"desc",}
@@ -35,7 +42,7 @@ export async function fetchProductByFilter(filter, sort, pagination) {
   );
   const data = response.data;
   const totalItems = await response.headers.get("X-Total-Count"); // when we made api call this gets the total number fo products against that call. In X-Total-Count total number of products are show like here total number of products against this api call 30. X-Total-Count lie under header of api call
-  console.log(data);
+  // console.log(data);
   return { data: { products: data, totalItems: totalItems } };
 }
 
