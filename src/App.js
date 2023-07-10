@@ -5,8 +5,6 @@ import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import SignupPage from './pages/SignupPage';
-
-
 import {
   createBrowserRouter,
   RouterProvider 
@@ -42,8 +40,6 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">    
-        
-      
   
       <RouterProvider router={router} />
 
