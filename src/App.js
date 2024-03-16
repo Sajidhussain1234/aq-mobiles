@@ -1,19 +1,26 @@
-import './App.css';
-import CartPage from './pages/CartPage';
-import Checkout from './pages/Checkout';
-import Home from './pages/Home';
-import LoginPage from './pages/LoginPage';
-import ProductDetailPage from './pages/ProductDetailPage';
-import SignupPage from './pages/SignupPage';
-import {
-  createBrowserRouter,
-  RouterProvider 
-} from "react-router-dom";
+import { useEffect } from "react";
+import "./App.css";
+import Protected from "./features/auth/components/Protected";
+import CartPage from "./pages/CartPage";
+import Checkout from "./pages/Checkout";
+import Home from "./pages/Home";
+import LoginPage from "./pages/LoginPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import SignupPage from "./pages/SignupPage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchItemsByUserId } from "./features/cart/cartAPI";
+import { selectLoggedInUser } from "./features/auth/authSlice";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <Protected>
+        {" "}
+        <Home />
+      </Protected>
+    ),
   },
   {
     path: "/signup",
@@ -25,24 +32,45 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <CartPage />,
+    element: (
+      // <Protected>
+        <CartPage />
+      // </Protected>
+    ),
   },
   {
     path: "/checkout",
-    element: <Checkout />,
+    element: (
+      // <Protected>
+        // {" "}
+        <Checkout />
+      // </Protected>
+    ),
   },
   {
     path: "/product-detail/:id",
-    element: <ProductDetailPage />,
+    element: (
+      <Protected>
+        <ProductDetailPage />
+      </Protected>
+    ),
   },
 ]);
 
 function App() {
-  return (
-    <div className="App">    
-  
-      <RouterProvider router={router} />
 
+  const dispatch = useDispatch();
+  const user = useSelector(selectLoggedInUser);
+
+  useEffect(() => {
+    if (user) {
+      dispatch(fetchItemsByUserId(user.id));
+    }
+  }, []);
+
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
     </div>
   );
 }

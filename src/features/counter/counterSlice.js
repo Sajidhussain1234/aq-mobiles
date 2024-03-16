@@ -2,14 +2,14 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
 
 const initialState = {
-  value: 0,
   status: 'idle',
+  value: 0,
 };
 
 export const incrementAsync = createAsyncThunk(
   'counter/fetchCount',
-  async (amount) => {
-    const response = await fetchCount(amount);
+  async (value) => {
+    const response = await fetchCount(value); // Api Call
      return response.data;
   }
 );
@@ -24,18 +24,16 @@ export const counterSlice = createSlice({
   },
   
   extraReducers: (builder) => {
-    builder
-      .addCase(incrementAsync.pending, (state) => {
+    builder.addCase(incrementAsync.pending, (state) => {
         state.status = 'loading';
-      })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
+      }).addCase(incrementAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.value += action.payload;
       });
   },
 });
 
-export const { increment} = counterSlice.actions;
 export const selectCount = (state) => state.counter.value;
 
+export const { increment} = counterSlice.actions;
 export default counterSlice.reducer;
