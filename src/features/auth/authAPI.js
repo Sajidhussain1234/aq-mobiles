@@ -10,11 +10,13 @@ export async function createUser(userData) {
 export async function checkUser(loginInfo) {
   const email = loginInfo.email;
   const password = loginInfo.password;
-  const response = await axios.get("http://localhost:8080/users?email=" + email);
+  const response = await axios.get(
+    "http://localhost:8080/users?email=" + email
+  );
   const data = response.data[0];
-  if (data.length) {
-    if ( password === parseInt(data.password)) {     
-      return { data };
+  if (Object.keys(data).length) {
+    if (password === data.password) {
+      return data;
     } else {
       return { message: "wrong credentials" };
     }

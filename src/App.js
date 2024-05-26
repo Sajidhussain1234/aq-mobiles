@@ -9,8 +9,11 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import SignupPage from "./pages/SignupPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchItemsByUserId } from "./features/cart/cartAPI";
 import { selectLoggedInUser } from "./features/auth/authSlice";
+import {
+  fetchItemsByUserIdAsync,
+  selectItems,
+} from "./features/cart/cartSlice";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +37,7 @@ const router = createBrowserRouter([
     path: "/cart",
     element: (
       // <Protected>
-        <CartPage />
+      <CartPage />
       // </Protected>
     ),
   },
@@ -42,8 +45,8 @@ const router = createBrowserRouter([
     path: "/checkout",
     element: (
       // <Protected>
-        // {" "}
-        <Checkout />
+      // {" "}
+      <Checkout />
       // </Protected>
     ),
   },
@@ -58,15 +61,15 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
 
   useEffect(() => {
+    // Fetch Cart item for user when he land on a website
     if (user) {
-      dispatch(fetchItemsByUserId(user.id));
+      dispatch(fetchItemsByUserIdAsync(user.id));
     }
-  }, []);
+  }, [user]);
 
   return (
     <div className="App">
