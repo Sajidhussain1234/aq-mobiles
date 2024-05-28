@@ -16,7 +16,8 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "AQ Mobiles ", href: "#", current: true },
+  // { name: "AQ Mobiles ", href: "#", current: true },
+  { name: "IMTIAZ Store ", href: "#", current: true },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
   { name: "Reports", href: "#", current: false },
@@ -227,7 +228,8 @@ export default function Navbar({ children }) {
         <header className="bg-white shadow">
           <div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              AQ Mobiles
+              {/* AQ Mobiles */}
+              IMTIAZ Store
             </h1>
           </div>
         </header>

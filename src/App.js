@@ -15,6 +15,8 @@ import {
   selectItems,
 } from "./features/cart/cartSlice";
 import PageNotFound from "./pages/404";
+import OrderSuccessPage from "./pages/OrderSuccessPage";
+import OrderFailedPage from "./pages/OrderFailedPage";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,22 @@ const router = createBrowserRouter([
     element: (
       <Protected>
         <ProductDetailPage />
+      </Protected>
+    ),
+  },
+  {
+    path: "/order-success/:id",
+    element: (
+      <Protected>
+        <OrderSuccessPage />
+      </Protected>
+    ),
+  },
+  {
+    path: "/order-failed",
+    element: (
+      <Protected>
+        <OrderFailedPage />
       </Protected>
     ),
   },

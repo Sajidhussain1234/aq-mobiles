@@ -21,8 +21,18 @@ export async function updateCart(updateItem) {
   const data = response.data;
   return data;
 }
+
 export async function deleteItemFromCart(itemId) {
   const response = await axios.delete(`http://localhost:8080/cart/${itemId}`);
   const data = response.data;
   return data;
+}
+
+export async function resetCart(userId) {
+  const response = await fetchItemsByUserId(userId);
+  const items = response.data;
+  for (let item of items) {
+    await deleteItemFromCart(item.id);
+  }
+  return { data: "cart reset" };
 }

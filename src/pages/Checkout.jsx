@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   deleteItemFromCartAsync,
@@ -11,14 +11,19 @@ import {
   updateUserAsync,
 } from "../features/auth/authSlice";
 import { useState } from "react";
-import { createOrderAsync } from "../features/order/orderSlice";
+import {
+  createOrderAsync,
+  selectCurrentOrder,
+} from "../features/order/orderSlice";
 
 const quantityOption = [1, 2, 3, 4, 5];
 
 export default function Checkout() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const items = useSelector(selectItems);
   const user = useSelector(selectLoggedInUser);
+  const currentOrder = useSelector(selectCurrentOrder);
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState("cash");
 
@@ -59,9 +64,10 @@ export default function Checkout() {
       paymentMethod,
       user,
       selectedAddress,
+      status: "pending", //other status can be,dispatch, delivered, received
     };
-    console.log("order", order);
     dispatch(createOrderAsync(order));
+
     // TODO: redirect to order success page?
     // TODO: clear the cart items
     // TODO: stack should be updated in db
@@ -70,7 +76,13 @@ export default function Checkout() {
   return (
     <>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
-      <div className="px-4 mx-auto mt-12 max-w-7xl sm:px-6 lg:px-8">
+      {currentOrder && (
+        <Navigate
+          to={`/order-success/${currentOrder.id}`}
+          replace={true}
+        ></Navigate>
+      )}
+      <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-4 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <form
@@ -84,7 +96,6 @@ export default function Checkout() {
                   })
                 );
                 reset();
-                console.log(data, "form ddd");
               })}
             >
               <div className="space-y-12">

@@ -3,7 +3,7 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductByIdAsync, selectedProductById } from "../productSlice";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { addToCartAsync } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
 
@@ -79,6 +79,7 @@ export default function ProductDetail() {
   const user = useSelector(selectLoggedInUser);
   const product = useSelector(selectedProductById);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const params = useParams();
   // console.log(params.id)
 
