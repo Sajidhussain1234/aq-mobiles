@@ -14,6 +14,7 @@ import {
   fetchItemsByUserIdAsync,
   selectItems,
 } from "./features/cart/cartSlice";
+import PageNotFound from "./pages/404";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         <ProductDetailPage />
       </Protected>
     ),
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
   },
 ]);
 

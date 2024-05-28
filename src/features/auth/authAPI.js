@@ -7,6 +7,16 @@ export async function createUser(userData) {
   return data;
 }
 
+export async function upDateUser(updateUserData) {
+  const response = await axios.patch(
+    `http://localhost:8080/users/${updateUserData.id}`,
+    updateUserData
+  );
+  const data = response.data;
+  // TODO: on server it will only return some info of user (not password)
+  return data;
+}
+
 export async function checkUser(loginInfo) {
   const email = loginInfo.email;
   const password = loginInfo.password;

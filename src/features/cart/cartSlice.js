@@ -47,9 +47,9 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
+    // increment: (state) => {
+    //   state.value += 1;
+    // },
   },
 
   extraReducers: (builder) => {

@@ -6,7 +6,6 @@ import {
 } from "@heroicons/react/20/solid";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  fetchAllProductsAsync,
   fetchBrandsAsync,
   fetchCategoriesAsync,
   fetchProductByFilterAsync,
@@ -27,7 +26,6 @@ import {
 } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 import { ITEMS_PER_PAGE } from "../../../app/constants";
-import { selectItems } from "../../cart/cartSlice";
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
@@ -82,13 +80,13 @@ export default function ProductList() {
     // console.log(newFilter)
   };
 
+  // {name: 'Best Rating', sort: 'rating', order: 'desc', current: false}
   const handleSort = (e, option) => {
     const sort = { _sort: option.sort, _order: option.order };
     setSort(sort);
   };
 
   const handlePage = (page) => {
-    console.log({ page });
     setPage(page);
   };
 

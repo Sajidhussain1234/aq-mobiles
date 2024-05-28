@@ -9,16 +9,16 @@ import {
   selectItems,
   updateCartAsync,
 } from "./cartSlice";
-import { selectLoggedInUser } from "../auth/authSlice";
 
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+
+const quantityOption = [1, 2, 3, 4, 5];
 
 export default function Cart() {
   const dispatch = useDispatch();
   const items = useSelector(selectItems);
-  console.log("Items", items);
 
   const totalAmount = items.reduce(
     (amount, item) => item.price * item.quantity + amount,
@@ -36,6 +36,7 @@ export default function Cart() {
 
   return (
     <div>
+      {!items.length && <Navigate to="/" replace={true}></Navigate>}
       <div className="px-4 mx-auto mt-12 bg-white max-w-7xl sm:px-6 lg:px-8 ">
         <div className="px-4 py-6 border-t border-gray-200 sm:px-6">
           <h1 className="my-4 text-3xl font-bold tracking-tight text-gray-900">
@@ -75,12 +76,13 @@ export default function Cart() {
                           onChange={(e) => {
                             handleQuantity(e, item);
                           }}
+                          value={item.quantity}
                         >
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
+                          {quantityOption.map((val) => (
+                            <option key={val} value={val}>
+                              {val}
+                            </option>
+                          ))}
                         </select>
                       </p>
 
