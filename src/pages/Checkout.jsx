@@ -57,7 +57,7 @@ export default function Checkout() {
   };
 
   const handleOrder = (e) => {
-    const order = {
+    const newOrder = {
       items,
       totalItems,
       totalAmount,
@@ -66,7 +66,7 @@ export default function Checkout() {
       selectedAddress,
       status: "pending", //other status can be,dispatch, delivered, received
     };
-    dispatch(createOrderAsync(order));
+    dispatch(createOrderAsync(newOrder));
 
     // TODO: redirect to order success page?
     // TODO: clear the cart items
@@ -88,11 +88,11 @@ export default function Checkout() {
             <form
               className="px-5 bg-white"
               noValidate
-              onSubmit={handleSubmit((data) => {
+              onSubmit={handleSubmit((newAddress) => {
                 dispatch(
                   updateUserAsync({
                     ...user,
-                    addresses: [...user.addresses, data],
+                    addresses: [...user.addresses, newAddress],
                   })
                 );
                 reset();
