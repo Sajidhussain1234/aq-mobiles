@@ -1,15 +1,15 @@
 import React from "react";
-import Cart from "../features/cart/Cart";
 import Navbar from "../features/navbar/Navbar";
+import Checkout from "./Checkout";
 
-function CartPage() {
+function CheckoutPage() {
   return (
     <div>
       <Navbar>
-        <Cart />
+        <Checkout />
       </Navbar>
     </div>
   );
 }
 
-export default CartPage;
+export default CheckoutPage;

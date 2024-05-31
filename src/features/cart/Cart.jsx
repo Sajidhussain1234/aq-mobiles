@@ -37,7 +37,7 @@ export default function Cart() {
   return (
     <div>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
-      <div className="px-4 mx-auto mt-12 bg-white max-w-7xl sm:px-6 lg:px-8 ">
+      <div className="px-4 mx-auto bg-white max-w-7xl sm:px-6 lg:px-8 ">
         <div className="px-4 py-6 border-t border-gray-200 sm:px-6">
           <h1 className="my-4 text-3xl font-bold tracking-tight text-gray-900">
             Cart Items
@@ -60,9 +60,11 @@ export default function Cart() {
                         <h3>
                           <a href={item.href}>{item.name}</a>
                         </h3>
-                        <p className="ml-4">{item?.price}</p>
+                        <p className="ml-4">${item.price}</p>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500">{item.color}</p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Brand:{item.brand}
+                      </p>
                     </div>
                     <div className="flex items-end justify-between flex-1 text-sm">
                       <p className="text-gray-500">

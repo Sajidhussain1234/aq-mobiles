@@ -10,11 +10,12 @@ import { useSelector } from "react-redux";
 import { selectItems } from "../cart/cartSlice";
 
 const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
+  name: "Sajid Hussain",
+  email: "sajid@gmail.com",
   imageUrl:
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
+
 const navigation = [
   // { name: "AQ Mobiles ", href: "#", current: true },
   { name: "IMTIAZ Store ", href: "#", current: true },
@@ -23,9 +24,10 @@ const navigation = [
   { name: "Reports", href: "#", current: false },
 ];
 const userNavigation = [
-  { name: "Your Profile", href: "/" },
-  { name: "Settings", link: "/" },
-  { name: "Sign out", link: "/login" },
+  { name: "Your Profile", route: "/profile" },
+  { name: "My Orders", route: "/orders" },
+  { name: "Settings", route: "/setting" },
+  { name: "Sign out", route: "/login" },
 ];
 
 function classNames(...classes) {
@@ -38,11 +40,12 @@ export default function Navbar({ children }) {
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="sticky top-0 z-10 bg-gray-800">
           {({ open }) => (
             <>
               <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
+                  {/* Desktop Menu  */}
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <Link to="/">
@@ -75,6 +78,7 @@ export default function Navbar({ children }) {
                   </div>
                   <div className="hidden md:block">
                     <div className="flex items-center ml-4 md:ml-6">
+                      {/* Cart Icon */}
                       <Link to="/cart">
                         <button
                           type="button"
@@ -100,7 +104,7 @@ export default function Navbar({ children }) {
                             <img
                               className="w-8 h-8 rounded-full"
                               src={user.imageUrl}
-                              alt=""
+                              alt="user-profile"
                             />
                           </Menu.Button>
                         </div>
@@ -118,7 +122,7 @@ export default function Navbar({ children }) {
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
                                   <Link
-                                    to={item.link}
+                                    to={item.route}
                                     className={classNames(
                                       active ? "bg-gray-100" : "",
                                       "block px-4 py-2 text-sm text-gray-700"
@@ -134,8 +138,8 @@ export default function Navbar({ children }) {
                       </Menu>
                     </div>
                   </div>
+                  {/* Mobile menu button */}
                   <div className="flex -mr-2 md:hidden">
-                    {/* Mobile menu button */}
                     <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-800 rounded-md hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -211,8 +215,7 @@ export default function Navbar({ children }) {
                     {userNavigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
-                        as="a"
-                        href={item.href}
+                        to={item.route}
                         className="block px-3 py-2 text-base font-medium text-gray-400 rounded-md hover:bg-gray-700 hover:text-white"
                       >
                         {item.name}
@@ -224,7 +227,7 @@ export default function Navbar({ children }) {
             </>
           )}
         </Disclosure>
-
+        {/* Header Section */}
         <header className="bg-white shadow">
           <div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
@@ -233,6 +236,7 @@ export default function Navbar({ children }) {
             </h1>
           </div>
         </header>
+        {/* Main Section */}
         <main>
           <div className="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
             {children}

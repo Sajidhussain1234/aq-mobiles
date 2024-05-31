@@ -1,15 +1,15 @@
 import React from "react";
-import Cart from "../features/cart/Cart";
+import UserOrders from "../features/user/components/UserOrders";
 import Navbar from "../features/navbar/Navbar";
 
-function CartPage() {
+function UserOrdersPage() {
   return (
     <div>
       <Navbar>
-        <Cart />
+        <UserOrders />
       </Navbar>
     </div>
   );
 }
 
-export default CartPage;
+export default UserOrdersPage;

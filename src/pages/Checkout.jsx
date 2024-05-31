@@ -82,9 +82,10 @@ export default function Checkout() {
           replace={true}
         ></Navigate>
       )}
-      <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      {/* <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8"> */}
+      <div className="px-4 mx-auto bg-white max-w-7xl sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 gap-x-4 gap-y-10 lg:grid-cols-5">
-          <div className="lg:col-span-3">
+          <div className="border-gray-300 lg:border-r-2 lg:col-span-3">
             <form
               className="px-5 bg-white"
               noValidate
@@ -365,7 +366,7 @@ export default function Checkout() {
           {/* Cart Item Section */}
           <div className="lg:col-span-2">
             <div className="px-4 mx-auto bg-white max-w-7xl sm:px-6 ">
-              <div className="py-4 border-t border-gray-200 ">
+              <div className="py-4 border-b border-gray-200 ">
                 <h1 className="my-4 text-3xl font-bold tracking-tight text-gray-900">
                   Cart Items
                 </h1>
