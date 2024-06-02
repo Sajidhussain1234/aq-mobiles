@@ -648,31 +648,13 @@
       "password": "Sajid123",
       "addresses": [
         {
-          "name": "Sajid",
-          "email": "sajidmcsbwn@gmail.com",
+          "name": "Sajid Hussain",
+          "email": "sajid@gmail.com",
           "phone": "03008807571",
-          "streetAddress": "towinship",
+          "streetAddress": "H#458, block#3, Sector A2, Township",
           "city": "Lahore",
-          "province": "punjab",
-          "postalCode": "54200"
-        },
-        {
-          "name": "Majid Hussain",
-          "email": "majidgmail.com",
-          "phone": "03014243465",
-          "streetAddress": "House#458, Block#3, Sector A2, Township",
-          "city": "Lahore",
-          "province": "Punjab",
-          "postalCode": "54700"
-        },
-        {
-          "name": "Sajid",
-          "email": "sajidmcsbwn@gmail.com",
-          "phone": "03008807571",
-          "streetAddress": "House#458, Block#3, Sector A2, Township",
-          "city": "Lahore",
-          "province": "punjab",
-          "postalCode": "655545"
+          "postalCode": "54000",
+          "province": "punjab"
         }
       ]
     },
@@ -707,18 +689,18 @@
   ],
   "orders": [
     {
-      "id": "cc8b",
+      "id": "430d",
       "items": [
         {
-          "id": "1",
-          "name": "iPhone 9",
-          "description": "An apple mobile which is nothing like apple",
-          "price": 549,
-          "discountPercentage": 12.96,
-          "rating": 4.69,
-          "stock": 94,
-          "brand": "Apple",
-          "category": "smartphones",
+          "id": "10",
+          "name": "HP Pavilion 15-DK1056WM",
+          "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+          "price": 1099,
+          "discountPercentage": 6.18,
+          "rating": 4.43,
+          "stock": 89,
+          "brand": "HP Pavilion",
+          "category": "laptops",
           "imageSrc": "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "images": [
             "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -731,142 +713,32 @@
         }
       ],
       "totalItems": 1,
-      "totalAmount": 549,
-      "paymentMethod": "cash",
+      "totalAmount": 1099,
+      "paymentMethod": "card",
       "user": {
         "id": "c7e5",
         "email": "sajid@gmail.com",
         "password": "Sajid123",
         "addresses": [
           {
-            "name": "Sajid",
+            "name": "Sajid Hussain",
             "email": "sajidmcsbwn@gmail.com",
             "phone": "03008807571",
-            "streetAddress": "towinship",
+            "streetAddress": "H#458, block#3, Sector A2, Township",
             "city": "Lahore",
             "province": "punjab",
-            "postalCode": "54200"
-          },
-          {
-            "name": "Majid Hussain",
-            "email": "majidgmail.com",
-            "phone": "03014243465",
-            "streetAddress": "House#458, Block#3, Sector A2, Township",
-            "city": "Lahore",
-            "province": "Punjab",
-            "postalCode": "54700"
-          },
-          {
-            "name": "Sajid",
-            "email": "sajidmcsbwn@gmail.com",
-            "phone": "03008807571",
-            "streetAddress": "House#458, Block#3, Sector A2, Township",
-            "city": "Lahore",
-            "province": "punjab",
-            "postalCode": "655545"
+            "postalCode": "54000"
           }
         ]
       },
       "selectedAddress": {
-        "name": "Majid Hussain",
-        "email": "majidgmail.com",
-        "phone": "03014243465",
-        "streetAddress": "House#458, Block#3, Sector A2, Township",
-        "city": "Lahore",
-        "province": "Punjab",
-        "postalCode": "54700"
-      },
-      "status": "pending"
-    },
-    {
-      "id": "9f1f",
-      "items": [
-        {
-          "id": "2",
-          "name": "iPhone X",
-          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-          "price": 899,
-          "discountPercentage": 17.94,
-          "rating": 4.44,
-          "stock": 34,
-          "brand": "Apple",
-          "category": "smartphones",
-          "imageSrc": "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "images": [
-            "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          ],
-          "quantity": 2,
-          "userId": "c7e5"
-        },
-        {
-          "id": "3",
-          "name": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "imageSrc": "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "images": [
-            "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          ],
-          "quantity": 3,
-          "userId": "c7e5"
-        }
-      ],
-      "totalItems": 5,
-      "totalAmount": 5545,
-      "paymentMethod": "cash",
-      "user": {
-        "id": "c7e5",
-        "email": "sajid@gmail.com",
-        "password": "Sajid123",
-        "addresses": [
-          {
-            "name": "Sajid",
-            "email": "sajidmcsbwn@gmail.com",
-            "phone": "03008807571",
-            "streetAddress": "towinship",
-            "city": "Lahore",
-            "province": "punjab",
-            "postalCode": "54200"
-          },
-          {
-            "name": "Majid Hussain",
-            "email": "majidgmail.com",
-            "phone": "03014243465",
-            "streetAddress": "House#458, Block#3, Sector A2, Township",
-            "city": "Lahore",
-            "province": "Punjab",
-            "postalCode": "54700"
-          },
-          {
-            "name": "Sajid",
-            "email": "sajidmcsbwn@gmail.com",
-            "phone": "03008807571",
-            "streetAddress": "House#458, Block#3, Sector A2, Township",
-            "city": "Lahore",
-            "province": "punjab",
-            "postalCode": "655545"
-          }
-        ]
-      },
-      "selectedAddress": {
-        "name": "Sajid",
+        "name": "Sajid Hussain",
         "email": "sajidmcsbwn@gmail.com",
         "phone": "03008807571",
-        "streetAddress": "House#458, Block#3, Sector A2, Township",
+        "streetAddress": "H#458, block#3, Sector A2, Township",
         "city": "Lahore",
         "province": "punjab",
-        "postalCode": "655545"
+        "postalCode": "54000"
       },
       "status": "pending"
     }

@@ -15,6 +15,11 @@ import OrderSuccessPage from "./pages/OrderSuccessPage";
 import OrderFailedPage from "./pages/OrderFailedPage";
 import UserOrdersPage from "./pages/UserOrdersPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import UserProfilePage from "./pages/UserProfilePage";
+import {
+  fetchLoggedInUserAsync,
+  selectUserInfo,
+} from "./features/user/userSlice";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +80,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/profile",
+    element: (
+      <Protected>
+        <UserProfilePage />
+      </Protected>
+    ),
+  },
+  {
     path: "/orders",
     element: (
       <Protected>
@@ -92,10 +105,12 @@ const router = createBrowserRouter([
 function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
+  // console.log(user, "user ifno");
 
   useEffect(() => {
     // Fetch Cart item for user when he land on a website
     if (user) {
+      dispatch(fetchLoggedInUserAsync(user.id));
       dispatch(fetchItemsByUserIdAsync(user.id));
     }
   }, [user]);

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { checkUser, fetchCount, upDateUser } from "./authAPI";
-import { createUser } from "./authAPI";
+import { checkUser, createUser } from "./authAPI";
+import { upDateUser } from "../user/userAPI";
 
 const initialState = {
   loggedInUser: null,
@@ -19,7 +19,6 @@ export const createUserAsync = createAsyncThunk(
 export const updateUserAsync = createAsyncThunk(
   "user/updateUser",
   async (updateUserData) => {
-    console.log("updateuser data with addresses", updateUserData);
     const data = await upDateUser(updateUserData);
     return data;
   }
