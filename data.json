@@ -655,6 +655,15 @@
           "city": "Lahore",
           "postalCode": "54000",
           "province": "punjab"
+        },
+        {
+          "name": "Khalid Hussain",
+          "email": "majid@gmail.com",
+          "phone": "03014243465",
+          "streetAddress": "township",
+          "city": "la",
+          "postalCode": "54000",
+          "province": "punjab"
         }
       ]
     },
