@@ -24,3 +24,12 @@ export async function checkUser(loginInfo) {
     return { message: "user not found" };
   }
 }
+
+export async function logout(userId) {
+  // TODO: we will remove user session info on server
+
+  // const response = await axios.get(`http://localhost:8080/users/${userId}`);
+  // const data = response.data;
+  // return data;
+  return { data: "successfully logout" };
+}
